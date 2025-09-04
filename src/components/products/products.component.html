@@ -5,45 +5,21 @@
     <!-- Product 1 -->
     <div class="col-md-4">
       <div class="card h-100 shadow-sm">
-        <img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcS-t365bhSAIEKxRIVdGRUPpIoJpbjAm682aNLVlXXxh50Xgf_reLnyb9mZaE5sJrdcOZR3XtKp8sa-TsCRZlvYGoSC3GK6VqnZciBBMFdex88QHx4dNpfA6fvIaeKnA96XTzIG1bM&usqp=CAc" alt="">
+        <!-- property binding -->
+        <img [src]="myProduct.image" alt="" />
+        <!-- interpolation -->
+        <!-- <img src={{myProduct.image}} alt="" />  -->
         <div class="card-body text-center">
-          <h5 class="card-title">iPhone 15 Pro</h5>
-          <p class="card-text text-muted">Brand: Apple</p>
-          <p class="fw-bold text-success">$1199</p>
+          <h5 class="card-title">{{myProduct.title}}</h5>
+          <p class="card-text text-muted">{{myProduct.price}}$</p>
+          <p class="fw-bold text-success"></p>
+          <button class="btn btn-info">Add To Favorite</button>
+          <!-- <button class="btn btn-success" [disabled]="myProduct.Notavaliable">Add To Cart</button> -->
+          <!-- <button class="btn btn-success" disabled={{myProduct.Notavaliable}}>Add To Cart</button> -->
         </div>
       </div>
     </div>
 
     <!-- Product 2 -->
-    <div class="col-md-4">
-      <div class="card h-100 shadow-sm">
-        <img
-          src="https://btech.com/media/catalog/product/cache/2263cd383aff97b1dabf39e431e10909/4/3/4323ba4f92a8ce3479cdd29b02837b5247c16860e7812dd2faf18b97dac6981d.jpeg"
-          class="card-img-top"
-          alt="Galaxy S24 Ultra"
-        />
-        <div class="card-body text-center">
-          <h5 class="card-title">Galaxy S24 Ultra</h5>
-          <p class="card-text text-muted">Brand: Samsung</p>
-          <p class="fw-bold text-success">$999</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Product 3 -->
-    <div class="col-md-4">
-      <div class="card h-100 shadow-sm">
-        <img
-          src="https://mobizil.com/wp-content/uploads/2024/08/Google-Pixel-9-Pro-1.jpg"
-          class="card-img-top"
-          alt="Pixel 9 Pro"
-        />
-        <div class="card-body text-center">
-          <h5 class="card-title">Pixel 9 Pro</h5>
-          <p class="card-text text-muted">Brand: Google</p>
-          <p class="fw-bold text-success">$899</p>
-        </div>
-      </div>
-    </div>
   </div>
 </div>
