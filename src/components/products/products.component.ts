@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-products',
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './products.component.html',
   styleUrl: './products.component.css',
 })
@@ -62,4 +63,8 @@ export class ProductsComponent {
       discount: 3,
     },
   ];
+  searchVal="ramy"
+  addToFavList(productTitle:string){
+       alert(`Product ${productTitle} add to Favorites`)
+  }
 }

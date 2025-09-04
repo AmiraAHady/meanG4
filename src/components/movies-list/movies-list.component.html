@@ -1,0 +1,48 @@
+<div class="row row-cols-1 row-cols-md-3 g-4 mt-3">
+  @for (movie of allMovies; track $index) {
+  <div class="col">
+    <div class="card h-100 position-relative">
+      @if(movie.vote_average >7){
+      <span
+        class="badge bg-danger text-warning position-absolute top-0 start-0 m-2 px-3 py-2 rounded-pill"
+      >
+        ⭐ Top Rated
+      </span>
+      }@else {
+      <span
+        class="badge bg-secondary text-light position-absolute top-0 start-0 m-2 px-3 py-2 rounded-pill"
+      >
+        {{ movie.vote_average.toFixed(1) }}
+      </span>
+      }
+
+      <img
+        [src]="'https://image.tmdb.org/t/p/w500' + movie.poster_path"
+        class="card-img-top"
+        alt="{{ movie.title }}"
+      />
+      <div class="card-body">
+        <h5
+          class="card-title"
+          [ngClass]="movie.vote_average > 7 ? 'cls' : 'bg-warning'"
+        >
+          {{ movie.title }}
+        </h5>
+        <!-- <h5 class="card-title" ngClass="bg-danger">{{ movie.title }}</h5> -->
+        <p
+          class="card-text"
+          [ngStyle]="
+            movie.vote_average > 7
+              ? { 'background-color': 'green', color: 'white' }
+              : { 'background-color': 'yellow', color: 'black' }
+          "
+        >
+          {{ movie.overview }}
+        </p>
+      </div>
+    </div>
+  </div>
+  }@empty {
+  <h1>No Movies Founded!</h1>
+  }
+</div>
